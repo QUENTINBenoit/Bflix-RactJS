@@ -2,7 +2,7 @@
 import React from 'react';
 
 // == Import
-import Nav from 'src/components/Nav';
+import Nav from 'src/containers/Nav';
 import './app.scss';
 
 // == Composant
@@ -15,7 +15,6 @@ const App = () => (
     { /* rows */}
 
     { /* footer */}
-
 
   </div>
 );

@@ -1,26 +1,26 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-
+import PropTypes from 'prop-types';
 
 import logo from 'src/assets/images/Netflix.png';
 import avatar from 'src/assets/images/avataaars.png';
-
-
-import './nav.scss';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+// import classnames from 'classnames';
+import './nav.scss';
 
-const Nav = () => (
-  <nav className="nav  show">
+const Nav = ({ isClose, manageToggle }) => (
+  <nav className={isClose ? 'nav  ' : 'nav show'}>
     <button
       className="nav__burger"
       type="button"
+      onClick={manageToggle}
     >
       <MenuIcon />
     </button>
+
     <img src={logo} className="nav__logo" alt="logo-netflix" />
 
-    <div className="nav__links">
+    <div className="nav__links ">
       <a href="/" className="nav__link"> Accueil</a>
       <a href="/" className="nav__link"> Serie</a>
       <a href="/" className="nav__link"> Films</a>
@@ -33,9 +33,15 @@ const Nav = () => (
 
     <img src={avatar} className="nav__avatar" alt="avatar" />
   </nav>
-
 );
 
-// Nav; propTypes = {
-// };
+
+Nav.propTypes = {
+  isClose: PropTypes.bool.isRequired,
+  manageToggle: PropTypes.func.isRequired,
+};
 export default Nav;
+
+// const classNames = classnames('nav show', { 'nav': isClose });
+// console.log({ classNames });
+// console.log({ isClose });
