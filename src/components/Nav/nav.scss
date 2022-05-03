@@ -4,14 +4,18 @@
   flex-wrap: wrap;
   position: fixed;
   width: 100%;
-  height: 15%;
-  padding: 2rem 2%;
+  height: 10%;
+  padding: 1rem 3rem;
   color: #fff;
-  background-color: black;
+  background-color: rgba($color: #000000, $alpha: 0.5) ;
   justify-content: space-between;
-
+  z-index: 1;
+  box-shadow: 0 15px 28px 3px rgba($color: #000000, $alpha: 0.6);
+  @media screen and (max-width:767.98px) {
+    background-color: rgba($color: #000000, $alpha: 0.8)
+  }
   &__logo {
-    background-color: black;
+    background-color: rgba($color: #000000, $alpha: 0);
     max-width: 10rem;
   }
 
@@ -39,21 +43,24 @@
       visibility: hidden;
       position: absolute;
    
-      // top:120%; 
-      // right: 0; 
+       top:120%; 
+       left: 0; 
       .show & {
         display: flex;
         flex-direction: column;
         visibility: visible;
         width: 30%;
         height: 20vh;
-        top: 9rem;
-        background-color: black;
+        top: 6.1rem;
+       
+        border-radius: 0% 0% 5% 5%;
+        background-color: rgba($color: #000000, $alpha: 0.8)
       }
   
       .nav__link {
         font-size: 1.2rem;
         padding: .8rem .8rem;
+        margin-left: 1.8rem;
       }
     }
   }
@@ -71,7 +78,8 @@
    
  }
   &__avatar {
-    background-color: black;
+    background-color: rgba($color: #000000, $alpha: 0);
+    // background-color: black;
     max-width: 3rem;
    
   }

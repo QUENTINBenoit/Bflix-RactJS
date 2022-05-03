@@ -35,13 +35,8 @@ const Nav = ({ isClose, manageToggle }) => (
   </nav>
 );
 
-
 Nav.propTypes = {
   isClose: PropTypes.bool.isRequired,
   manageToggle: PropTypes.func.isRequired,
 };
 export default Nav;
-
-// const classNames = classnames('nav show', { 'nav': isClose });
-// console.log({ classNames });
-// console.log({ isClose });
