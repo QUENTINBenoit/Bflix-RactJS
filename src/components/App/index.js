@@ -18,7 +18,6 @@ const App = () => (
     <Banner />
     <List />
     <List />
-    { /* rows */}
 
     { /* footer */}
     <Footer />

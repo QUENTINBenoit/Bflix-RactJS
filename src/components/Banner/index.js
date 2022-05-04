@@ -1,7 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-
-import covert from 'src/assets/images/imageTest.jpg';
+import Views from 'src/components/Views';
 import './banner.scss';
 
 const Banner = () => (
@@ -18,7 +17,7 @@ const Banner = () => (
         <button className="banner__button" type="button">Plus d'infos</button>
       </div>
     </div>
-
+    <Views />
   </header>
 );
 
