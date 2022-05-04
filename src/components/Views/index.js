@@ -11,6 +11,10 @@ const Views = ({ isCloseViews, viewsToggle }) => (
         <p>
           Description de la description du projet B'flix
           enfin bref ce texte n'est que du texte...
+          Description de la description du projet B'flix
+          enfin bref ce texte n'est que du texte...
+          Description de la description du projet B'flix
+          enfin bref ce texte n'est que du texte...
         </p>
       </div>
       <button
@@ -25,7 +29,7 @@ const Views = ({ isCloseViews, viewsToggle }) => (
 );
 
 Views.propTypes = {
-  isClose: PropTypes.bool.isRequired,
+  isCloseViews: PropTypes.bool.isRequired,
   viewsToggle: PropTypes.func.isRequired,
 };
 export default Views;

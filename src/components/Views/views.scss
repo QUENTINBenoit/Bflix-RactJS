@@ -9,6 +9,7 @@
   display: none;
   margin: 2rem 20rem;
   box-shadow: 15%;
+  color: white;
   &::after {
     content: "";
     display: block;
@@ -35,6 +36,12 @@
     font-size: 1.2rem;
     z-index: 1;
     
+  }
+  &__title{
+     font-weight: 600;
+     font-size: 3rem;
+     margin-bottom: 1rem;
+      
   }
   &__close{
     position: absolute;

@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => ({
   manageToggle: () => {
-    // console.log('je veux inersé l\'etat de mon composant');
+    console.log('je veux inersé l\'etat de mon composant');
     dispatch(toggleSettings());
   },
 });

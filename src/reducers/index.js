@@ -1,7 +1,8 @@
-import { TOGGLE_SETTINGS } from 'src/action';
+import { TOGGLE_SETTINGS, VIEWS_SETTINGS } from 'src/action';
 
 const initialState = {
   isSettingClose: true,
+  isSettingsCloseViews: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,6 +11,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isSettingClose: !state.isSettingClose,
+      };
+    case VIEWS_SETTINGS:
+      return {
+        ...state,
+        isSettingsCloseViews: !state.isSettingsCloseViews,
       };
     default:
       return state;

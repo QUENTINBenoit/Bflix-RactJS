@@ -18,7 +18,11 @@ const Nav = ({ isClose, manageToggle }) => (
       <MenuIcon />
     </button>
 
-    <img src={logo} className="nav__logo" alt="logo-netflix" />
+
+    <div className="nav__logo">
+      B'ensMovies
+
+    </div>
 
     <div className="nav__links ">
       <a href="/" className="nav__link"> Accueil</a>

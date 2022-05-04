@@ -5,7 +5,8 @@ import React from 'react';
 import Nav from 'src/containers/Nav';
 import Footer from 'src/components/Footer';
 import List from 'src/components/List';
-import Banner from '../Banner';
+import Banner from 'src/containers/Banner';
+import Views from 'src/containers/Views';
 import './app.scss';
 
 // == Composant
@@ -16,6 +17,7 @@ const App = () => (
     { /* banner */}
 
     <Banner />
+    <Views />
     <List />
     <List />
 
