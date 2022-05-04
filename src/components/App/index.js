@@ -4,7 +4,7 @@ import React from 'react';
 // == Import
 import Nav from 'src/containers/Nav';
 import Footer from 'src/components/Footer';
-// import Test from 'src/components/Test';
+import List from 'src/components/List';
 import Banner from '../Banner';
 import './app.scss';
 
@@ -16,7 +16,8 @@ const App = () => (
     { /* banner */}
 
     <Banner />
-
+    <List />
+    <List />
     { /* rows */}
 
     { /* footer */}
