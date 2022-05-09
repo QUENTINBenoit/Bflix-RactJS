@@ -20,8 +20,7 @@ const Nav = ({ isClose, manageToggle }) => (
 
 
     <div className="nav__logo">
-      B'ensMovies
-
+      B'Flix
     </div>
 
     <div className="nav__links ">
