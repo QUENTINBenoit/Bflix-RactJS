@@ -1,10 +1,15 @@
 import { TOGGLE_SETTINGS, VIEWS_SETTINGS } from 'src/action';
-import { FETCH_SERIES_FROM_API, SAVE_SERIES } from 'src/action/series';
+import { SAVE_SERIES } from 'src/action/series';
+import { CHANGE_USER_FIELD, SAVE_USER } from 'src/action/user';
 
 const initialState = {
   isSettingClose: true,
   isSettingsCloseViews: true,
   series: [],
+  email: '',
+  password: '',
+  logged: false,
+  name: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -19,16 +24,26 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isSettingsCloseViews: !state.isSettingsCloseViews,
       };
-    case FETCH_SERIES_FROM_API:
-      return {
-        ...state,
-        // series: 'benoit',
-      };
     case SAVE_SERIES:
       return {
         ...state,
         series: action.series,
       };
+    case CHANGE_USER_FIELD:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+
+    case SAVE_USER:
+      return {
+        ...state,
+        logged: true,
+        name: action.data.username,
+        email: '',
+        password: '',
+      };
+
     default:
       return state;
   }

@@ -1,4 +1,3 @@
-// == Import npm
 import React, { useEffect } from 'react';
 // import { useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -9,10 +8,11 @@ import Footer from 'src/components/Footer';
 import List from 'src/containers/List';
 import Banner from 'src/containers/Banner';
 import Views from 'src/containers/Views';
+import LoginForm from 'src/containers/LoginForm';
 import './app.scss';
 
 // == Composant
-function App({ fetchSeries }) {
+function App({ fetchSeries, isLogged }) {
   useEffect(
     fetchSeries,
     [],
@@ -20,23 +20,32 @@ function App({ fetchSeries }) {
 
   return (
     <div className="app">
-      { /* navbar */}
-      <Nav />
-      { /* banner */}
+      <Nav isLogged={isLogged} />
+      {!isLogged && (
+        <LoginForm />
+      )}
 
-      <Banner />
-      <Views />
-      <List />
-      <List />
+      {isLogged && (
+        <>
+          <Banner />
+          <Views />
+          <List />
+          <List />
+          <Footer />
+        </>
+      )}
 
-      { /* footer */}
-      <Footer />
     </div>
   );
 }
 App.propTypes = {
-
   fetchSeries: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool,
 };
+
+App.defaultProps = {
+  isLogged: true,
+};
+
 // == Export
 export default App;

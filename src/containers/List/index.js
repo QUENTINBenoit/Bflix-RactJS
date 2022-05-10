@@ -1,14 +1,10 @@
 import { connect } from 'react-redux';
 import List from 'src/components/List';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => ({
+  series: state.series,
+});
 
-  console.log(state.series, "benoit 2 ");
-
-  return ({
-    series: state.series,
-  });
-};
 const mapDispatchToProps = (dispatch) => ({
 
 });

@@ -17,9 +17,11 @@ const List = ({ series }) => (
 );
 
 List.propTypes = {
-  series: PropTypes.arrayOf({
-    Title: PropTypes.string.isRequired,
-    // Poster: PropTypes.string.isRequired,
-  }),
+  series: PropTypes.arrayOf(
+    PropTypes.shape({
+      Title: PropTypes.string.isRequired,
+      Poster: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 export default List;

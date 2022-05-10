@@ -4,6 +4,7 @@ import App from 'src/components/App';
 import { fetchSeriesFromApi } from 'src/action/series';
 
 const mapStateToProps = (state, ownProps) => ({
+  isLogged: state.logged,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
