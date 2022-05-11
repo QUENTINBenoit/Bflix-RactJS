@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-
 
 // import covert from 'src/assets/images/imageTest.jpg';
 import './list.scss';
 
-const List = ({ series }) => (
+const List = ({ title, poster }) => (
   <div className="list">
-    <h2 className="list__title">{series.title}</h2>
+    <h2 className="list__title">{title}</h2>
     <div className="list__images">
       <img
-        src={series.poster}
+        src={poster}
         className="list__image"
         alt="display image"
       />
@@ -19,11 +18,10 @@ const List = ({ series }) => (
 );
 
 List.propTypes = {
-  series: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      poster: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
+
+  title: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+
 };
 export default List;
+// ben@gmail.com

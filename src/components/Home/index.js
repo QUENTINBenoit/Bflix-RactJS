@@ -7,16 +7,22 @@ import Banner from 'src/containers/Banner';
 import Views from 'src/containers/Views';
 // import './home.scss';
 
-const Home = ({ fetchSeries }) => {
+const Home = ({ fetchSeries, series }) => {
+  console.log(`de benoit pour voir mon json ${series}`);
   useEffect(
     fetchSeries,
     [],
   );
+
   return (
     <div className="home">
       <Banner />
       <Views />
-      <List />
+      {
+        series.map(
+          (serie) => <List key={serie.id} {...serie} />,
+        )
+      }
       <Footer />
     </div>
   );
@@ -24,5 +30,11 @@ const Home = ({ fetchSeries }) => {
 
 Home.propTypes = {
   fetchSeries: PropTypes.func.isRequired,
+  series: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 export default Home;
+// ben@gmail.com
