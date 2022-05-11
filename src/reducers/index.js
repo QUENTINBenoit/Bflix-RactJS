@@ -24,11 +24,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isSettingsCloseViews: !state.isSettingsCloseViews,
       };
-    case SAVE_SERIES:
-      return {
-        ...state,
-        series: action.series,
-      };
+
     case CHANGE_USER_FIELD:
       return {
         ...state,
@@ -43,7 +39,11 @@ const reducer = (state = initialState, action = {}) => {
         email: '',
         password: '',
       };
-
+    case SAVE_SERIES:
+      return {
+        ...state,
+        series: action.series,
+      };
     default:
       return state;
   }

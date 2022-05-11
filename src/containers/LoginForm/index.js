@@ -3,22 +3,20 @@ import { connect } from 'react-redux';
 import LoginForm from 'src/components/LoginForm';
 import { changeUserField, loginUser } from '../../action/user';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   email: state.email,
-  // email: 'ben@gmail.com',
   password: state.password,
-  // password: 'demo1234',
   isLogged: state.logged,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   changeField: function (value, name) {
-    console.log(`change field ${name} with value : ${value}`);
-    console.log(name);
+    // console.log(`change field ${name} with value : ${value}`);
+    // console.log(name);
     dispatch(changeUserField(value, name));
   },
   handleLogin: function () {
-    console.log('login de benoit ');
+    // console.log('login de benoit ');
     dispatch(loginUser());
   },
   // handleLogout: function () {

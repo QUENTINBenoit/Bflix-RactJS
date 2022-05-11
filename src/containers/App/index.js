@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import App from 'src/components/App';
 import { fetchSeriesFromApi } from 'src/action/series';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state /* ownProps */) => ({
   isLogged: state.logged,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch /* ownProps */) => ({
   fetchSeries: () => {
     dispatch(fetchSeriesFromApi());
   },

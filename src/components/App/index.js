@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-// import { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // == Import
@@ -12,34 +11,29 @@ import LoginForm from 'src/containers/LoginForm';
 import './app.scss';
 
 // == Composant
-function App({ fetchSeries, isLogged }) {
-  useEffect(
-    fetchSeries,
-    [],
-  );
+const App = ({ isLogged }) => (
+  <div className="app">
+    <Nav isLogged={isLogged} />
+    {!isLogged && (
+      <LoginForm />
+    )}
 
-  return (
-    <div className="app">
-      <Nav isLogged={isLogged} />
-      {!isLogged && (
-        <LoginForm />
-      )}
+    {isLogged && (
+      <>
+        <Banner />
+        <Views />
+        <List />
+        <List />
+        <Footer />
+      </>
+    )}
 
-      {isLogged && (
-        <>
-          <Banner />
-          <Views />
-          <List />
-          <List />
-          <Footer />
-        </>
-      )}
 
-    </div>
-  );
-}
+  </div>
+);
+
 App.propTypes = {
-  fetchSeries: PropTypes.func.isRequired,
+  // fetchSeries: PropTypes.func.isRequired,
   isLogged: PropTypes.bool,
 };
 

@@ -6,8 +6,6 @@ import { LOGIN_USER, saveUser } from 'src/action/user';
 const axiosInstance = axios.create(
   {
     baseURL: 'http://localhost:8000/api/',
-    // baseURL: 'https://www.omdbapi.com/?i=tt3896198&apikey=190bffa9&t=',
-    // 'api/login_check'
   },
 );
 
@@ -26,22 +24,17 @@ const apiMiddlware = (store) => (next) => (action) => {
             axiosInstance.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
           },
         );
-    }
       next(action);
       break;
+    }
     case FETCH_SERIES_FROM_API: {
-      const { token } = store.getState();
-      console.log('TOKEN ', token);
+      console.log('demmande API');
       axiosInstance
-        .get('v1/tvshows/', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
+        .get('v1/tvshows/')
         .then(
           (response) => {
-            console.log(response);
-            store.dispatch(saveSeries(response));
+            console.log(response.data);
+            store.dispatch(saveSeries(response.data));
           },
         )
         .catch((error) => {
