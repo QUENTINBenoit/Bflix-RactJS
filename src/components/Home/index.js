@@ -18,11 +18,8 @@ const Home = ({ fetchSeries, series }) => {
     <div className="home">
       <Banner />
       <Views />
-      {
-        series.map(
-          (serie) => <List key={serie.id} {...serie} />,
-        )
-      }
+      <List />
+      <List />
       <Footer />
     </div>
   );

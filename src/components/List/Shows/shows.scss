@@ -1,0 +1,16 @@
+img {
+  width: 8rem;
+  margin: .5rem;
+  border-radius: 7%;
+
+  // animation sur l'imag
+  transition: transform 0.3s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+
+  }
+
+
+}

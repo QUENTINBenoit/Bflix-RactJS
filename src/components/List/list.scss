@@ -1,35 +1,24 @@
 .list {
-  background-color: blue;
   height: 18rem;
   margin: 1rem 0rem;
   padding: 1rem 2rem;
   color: white;
 
   &__title {
-    font-weight: 600;
+    font-weight: 800;
     font-size: 2rem;
   }
 
   &__images {
     display: flex;
     align-items: center;
+    width: 100%;
+    padding: 1rem 0rem;
     overflow-x: scroll;
     overflow-y: hidden;
-    width: 100%;
-    padding: 0rem 0;
 
-    .list__image {
-      width: 150px;
-      margin: .5rem;
-      border-radius: 7%;
-      // animation sur l'imag
-      transition: transform 0.3s ease-in;
 
-      &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-      }
-    }
+
 
   }
 

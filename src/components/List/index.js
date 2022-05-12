@@ -1,27 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import covert from 'src/assets/images/imageTest.jpg';
+import Shows from './Shows';
+
 import './list.scss';
 
-const List = ({ title, poster }) => (
+const List = ({ series }) => (
   <div className="list">
-    <h2 className="list__title">{title}</h2>
+
+    <h2 className="list__title">Liste des series</h2>
     <div className="list__images">
-      <img
-        src={poster}
-        className="list__image"
-        alt="display image"
-      />
+      {
+        series.map(
+          (serie) => <Shows key={serie.id} {...serie} />,
+        )
+      }
     </div>
   </div>
+
 );
 
 List.propTypes = {
-
-  title: PropTypes.string.isRequired,
-  poster: PropTypes.string.isRequired,
-
+  series: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 export default List;
 // ben@gmail.com
