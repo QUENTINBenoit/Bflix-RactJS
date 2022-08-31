@@ -4,13 +4,7 @@ import PropTypes from 'prop-types';
 import './shows.scss';
 
 const Shows = ({ title, poster }) => (
-
-  <img
-    src={poster}
-    className="listez__image"
-    alt={`Poster ${title}`}
-  />
-
+  <img src={poster} className="listez__image" alt={`Poster ${title}`} />
 );
 
 Shows.propTypes = {

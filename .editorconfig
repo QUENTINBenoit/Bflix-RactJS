@@ -5,6 +5,7 @@ root = true
 [*]
 end_of_line = lf
 insert_final_newline = true
+quote_type = single
 
 [*.html]
 indent_style = tab
@@ -21,3 +22,5 @@ indent_size = 2
 [*.json]
 indent_style = space
 indent_size = 2
+
+

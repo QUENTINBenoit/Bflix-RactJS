@@ -12,19 +12,13 @@ import Home from 'src/containers/Home';
 import LoginForm from 'src/containers/LoginForm';
 import './app.scss';
 
-// == Composant
+// == Composant/
 const App = ({ isLogged }) => (
   <div className="app">
     <Nav isLogged={isLogged} />
     <Routes>
-
-      {!isLogged && (
-        <Route path="/" element={(<LoginForm />)} />
-      )}
-      {isLogged && (
-        <Route path="/" element={(<Home />)} />
-      )}
-
+      {!isLogged && <Route path="/" element={<LoginForm />} />}
+      {isLogged && <Route path="/" element={<Home />} />}
     </Routes>
   </div>
 );
